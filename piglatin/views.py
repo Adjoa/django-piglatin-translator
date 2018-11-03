@@ -8,7 +8,7 @@ def translate(req):
     original = req.GET['original_text'].lower()
     translation = ''
 
-    for word in orginal.split():
+    for word in original.split():
         if word[0] in ['a', 'e', 'i', 'o', 'u']:
             translation += word
             translation += 'yay'
