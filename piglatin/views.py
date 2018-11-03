@@ -5,4 +5,16 @@ def home(req):
     return render(req, 'home.html')
 
 def translate(req):
-    return HttpResponse("This is the translate page. " + req.GET['original_text'])
+    original = req.GET['original_text'].lower()
+    translation = ''
+
+    for word in orginal.split():
+        if word[0] in ['a', 'e', 'i', 'o', 'u']:
+            translation += word
+            translation += 'yay'
+        else:
+            translation += word[1:]
+            translation += word[0]
+            translation += 'ay'
+            
+    return HttpResponse(translation)
