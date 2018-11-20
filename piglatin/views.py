@@ -17,4 +17,4 @@ def translate(req):
             translation += word[0]
             translation += 'ay'
             
-    return render(req, 'translate.html')
+    return render(req, 'translate.html', 'original':original, 'translation':translation)
