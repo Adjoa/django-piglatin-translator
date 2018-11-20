@@ -17,4 +17,4 @@ def translate(req):
             translation += word[0]
             translation += 'ay'
             
-    return HttpResponse(translation)
+    return render(request, 'translate.html')
